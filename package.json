@@ -1,0 +1,33 @@
+{
+  "name": "@niyari/base32-clockwork-ts",
+  "version": "0.0.0",
+  "description": "Clockwork Base32 encode/decode for TypeScript",
+  "main": "dist/base32-cw.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./test/test.js",
+    "benchmark": "node ./test/benchmark.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niyari/base32-clockwork-ts.git"
+  },
+  "keywords": [
+    "base32",
+    "base32-ts",
+    "clockwork",
+    "typescript"
+  ],
+  "author": "Sou Niyari (https://github.com/niyari)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niyari/base32-clockwork-ts/issues"
+  },
+  "homepage": "https://github.com/niyari/base32-clockwork-ts#readme",
+  "devDependencies": {
+    "typescript": "4.2.4"
+  }
+}
