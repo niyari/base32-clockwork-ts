@@ -34,6 +34,8 @@ import { Base32Clockwork as B } from "../dist/base32-cw.js";
         const clkw = new B();
         cToBe(clkw.encode('foobar'), 'CSQPYRK1E8', 'Encode');
         cToBe(clkw.decode('CSQPYRK1E8'), 'foobar', 'Decode');
+        cToBe(clkw.decode('csqpyrk1e8'), 'foobar', 'Decode lower case');
+        cToBe(clkw.decode('csqpyr-k1*e8'), '', 'Decode invalid character');
         lResult();
 
         lStart('Clockwork Reference test');

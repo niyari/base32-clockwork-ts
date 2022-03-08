@@ -42,13 +42,11 @@ export class Base32Clockwork {
         for (let i = 0; i < input.byteLength; i++) {
             value = (value << 8) | input[i];
             offset += 8;
-            if (offset >= 5) {
-                output += dic[(value >>> (offset - 5)) & 31];
-                offset -= 5;
-            }
-            if (offset >= 5) {
-                output += dic[(value >>> (offset - 5)) & 31];
-                offset -= 5;
+            while (offset >= 5) {
+                if (offset >= 5) {
+                    output += dic[(value >>> (offset - 5)) & 31];
+                    offset -= 5;
+                }
             }
         }
 
@@ -69,7 +67,7 @@ export class Base32Clockwork {
         this._lastError = { isError: !1, message: '' };
         const dic = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
         input = input.toUpperCase().replace(/\s|\=+$/g, '').replace(/O/g, '0').replace(/[IL]/g, '1');
-        if (/^(()|[A-TV-Z0-9=]+)$/.test(input) === false) {
+        if (/^[A-TV-Z0-9]+$/.test(input) === false) {
             this._lastError = { isError: !0, message: 'Invalid data: Input strings.' };
             input = '';
         }
