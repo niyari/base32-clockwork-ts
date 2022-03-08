@@ -55,13 +55,13 @@ import { Base32Clockwork as B } from "../dist/base32-cw.js";
         lResult();
 
         lStart('Decode RegExp \\s');
-        cToBe(clkw.decode("CS Q\n\r PYR K1 E  8    "), 'foobar', 'Base32');
+        cToBe(clkw.decode("CS Q\n\r PYR K1 E \t  8   == =    = "), 'foobar', 'Delete = and \\s');
         lResult();
 
         lStart('Return Array');
         const clkw_arr_on = new B({ array: true });
         const ret_b32_arr = clkw_arr_on.decode('CSQPYRK1E8');
-        cToBe(ret_b32_arr.data, 'foobar', 'Base32');
+        cToBe(ret_b32_arr.data, 'foobar', 'dataArray');
 
 
     } catch (e) {

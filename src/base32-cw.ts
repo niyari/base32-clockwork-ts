@@ -66,7 +66,7 @@ export class Base32Clockwork {
     public decode(input: string = ''): string | ArrayBuffer | ReturnArray {
         this._lastError = { isError: !1, message: '' };
         const dic = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
-        input = input.toUpperCase().replace(/\s|\=+$/g, '').replace(/O/g, '0').replace(/[IL]/g, '1');
+        input = input.toUpperCase().replace(/\s|=/g, '').replace(/O/g, '0').replace(/[IL]/g, '1');
         if (/^[A-TV-Z0-9]+$/.test(input) === false) {
             this._lastError = { isError: !0, message: 'Invalid data: Input strings.' };
             input = '';
