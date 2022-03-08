@@ -1,6 +1,6 @@
 {
   "name": "@niyari/base32-clockwork-ts",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Clockwork Base32 encode/decode for TypeScript",
   "main": "dist/base32-cw.js",
   "directories": {
